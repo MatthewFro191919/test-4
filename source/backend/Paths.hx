@@ -413,6 +413,17 @@ class Paths
 		#end
 	}
 
+	inline static public function getTextureAtlas(key:String, ?library:String)
+	{
+		#if (MODS_ALLOWED && FUTURE_POLYMOD)
+		var file:String = modsTextureAtlas(key);
+		if(FileSystem.exists(file)) {
+			return file;
+		}
+		#end
+		return getPath('images/$key.zip', BINARY, library);
+	}
+
 	inline static public function formatToSongPath(path:String) {
 		final invalidChars = ~/[~&;:<>#\s]/g;
 		final hideChars = ~/[.,'"%?!]/g;
