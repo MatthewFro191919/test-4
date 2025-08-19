@@ -415,7 +415,7 @@ class Paths
 
 	inline static public function getTextureAtlas(key:String, ?library:String)
 	{
-		#if (MODS_ALLOWED && FUTURE_POLYMOD)
+		#if (MODS_ALLOWED)
 		var file:String = modsTextureAtlas(key);
 		if(FileSystem.exists(file)) {
 			return file;
