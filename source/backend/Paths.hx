@@ -479,6 +479,10 @@ class Paths
 	inline static public function modsTxt(key:String)
 		return modFolders('images/' + key + '.txt');
 
+	inline static public function modsTextureAtlas(key:String) {
+		return modFolders('images/' + key + '.zip');
+	}
+
 	inline static public function modsImagesJson(key:String)
 		return modFolders('images/' + key + '.json');
 
